@@ -1,4 +1,4 @@
-Find the largest Number in a list:
+1. Find the largest Number in a list:
 nums = [4, 9, 1, 8, 2]
 max = nums[0]
 for i in range(len(nums)):
@@ -6,3 +6,28 @@ for i in range(len(nums)):
          max = nums[i]
 print (max)
 
+
+2. Count how many numbers are less than 10.
+nums = [2, 12, 10, 15, 3, 6, 5]
+count = 0
+for i in range(len(nums)):
+        if nums[i] < 10:
+            count += 1
+print (count)
+
+
+3.Find the smallest number.
+nums = [2, 12, 10, 15, 3, 6, 5]
+min = nums[0]
+for i in range(len(nums)):
+    if nums[i] < min:
+        min = nums[i]
+print (min)
+
+4.Find the sum of all even numbers.
+nums = [2, 12, 10, 15, 3, 6, 5]
+sum = 0
+for i in range(len(nums)):
+    if nums[i] % 2 == 0:
+        sum += nums[i]
+print(sum)
