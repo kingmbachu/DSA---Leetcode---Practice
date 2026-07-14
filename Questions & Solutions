@@ -1,1 +1,8 @@
+Find the largest Number in a list:
+nums = [4, 9, 1, 8, 2]
+max = nums[0]
+for i in range(len(nums)):
+     if nums[i] > max:
+         max = nums[i]
+print (max)
 
