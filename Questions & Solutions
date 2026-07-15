@@ -31,3 +31,15 @@ for i in range(len(nums)):
     if nums[i] % 2 == 0:
         sum += nums[i]
 print(sum)
+
+
+
+
+4. Count how many numbers are even and greater than 5
+nums = [2, 12, 10, 15, 3, 6, 5]
+count = 0
+for i in range(len(nums)):
+    if nums[i] % 2 == 0 and nums[i] > 5:
+        count += 1
+print(count)
+
