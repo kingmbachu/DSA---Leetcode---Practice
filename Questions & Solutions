@@ -79,7 +79,7 @@ print(count_vowels("Programming"))
 def count_consonants(word):
     count = 0
     for i in range(len(word)):
-        if word[i] != "aeiou":
+        if word[i] != 'a' and word[i] != 'e' and word[i] != 'i' and word[i] != 'o' and word[i] != 'u':
             count += 1
         
     return(count)
