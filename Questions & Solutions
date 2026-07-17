@@ -72,3 +72,18 @@ def count_vowels(word):
 
 word = "Programming"
 print(count_vowels("Programming"))
+
+
+
+7. Count the number of Consonants in a word
+def count_consonants(word):
+    count = 0
+    for i in range(len(word)):
+        if word[i] != "aeiou":
+            count += 1
+        
+    return(count)
+
+count_consonants("Programming")
+Answer = count_consonants("Programming")
+print(Answer)
