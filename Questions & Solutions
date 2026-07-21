@@ -105,3 +105,19 @@ def contains_duplicate(nums):
 contains_duplicate([2, 3, 4, 3])
 Answer = contains_duplicate([2, 3, 4, 3])
 print(Answer)
+
+
+9. Return True or False if the List contains a duplicate [OPTIMIZED SOLUTION]
+def contains_duplicate(nums):
+    seen = set()
+    
+    for number in nums:
+        if number in seen:
+            return True
+        seen.add(number)
+    else:
+        return False
+        
+contains_duplicate([2, 3, 4, 4])
+Answer = contains_duplicate([2, 3, 4, 4])
+print(Answer)
