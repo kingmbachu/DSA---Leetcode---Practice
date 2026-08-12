@@ -156,3 +156,19 @@ def two_sum(nums, target):
 Answer = two_sum([2, 7, 11, 15], 9)
 print(Answer)
 
+
+12. Two Sum (Optimised Solution)
+def two_sum(nums, target):
+    seen = {}
+
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in seen:
+            return[seen[complement], i]
+        else:
+            seen[nums[i]] = i
+    
+    return False
+
+Answer = two_sum([3,8,4,6], 10)
+print(Answer)
