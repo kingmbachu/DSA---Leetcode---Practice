@@ -174,7 +174,7 @@ Answer = two_sum([3,8,4,6], 10)
 print(Answer)
 
 
-13. Valid Anagram
+13. Frequecy Count of Characters
 def count_characters(word):
     count ={}
 
