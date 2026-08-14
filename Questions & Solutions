@@ -172,3 +172,19 @@ def two_sum(nums, target):
 
 Answer = two_sum([3,8,4,6], 10)
 print(Answer)
+
+
+13. Valid Anagram
+def count_characters(word):
+    count ={}
+
+    for letter in word:
+        if letter in count:
+            count[letter] += 1
+        if letter not in count:
+            count[letter] = 1
+    else:
+        return(count)
+
+Answer = count_characters("banana")
+print(Answer)
