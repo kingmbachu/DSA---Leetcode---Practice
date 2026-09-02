@@ -223,16 +223,21 @@ print(Answer)
 
 15. Check if a word is a Palindrome by returning True or False
 def is_palindrome(s):
-    left = 0
-    right = len(s) - 1
+     left = 0
+        right = len(s) - 1
 
-    while left < right:
-        if s[left] != s[right]:
-            return False
-        left += 1
-        right -= 1
-    
-    return True
+        while left < right:
 
-Answer = is_palindrome("racecar")
+            while left < right and not s[left].isalnum():
+                left += 1
+            while left < right and not s[right].isalnum():
+                right -= 1
+
+            if s[left].lower() != s[right].lower():
+                return False
+            left += 1
+            right -= 1
+
+        return True
+Answer = is_palindrome("hello")
 print(Answer)
