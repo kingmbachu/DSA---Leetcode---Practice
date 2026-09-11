@@ -271,3 +271,23 @@ def is_valid(s):
 
 Answer = is_valid(["()"])
 print(Answer)
+
+
+17. Best time to Buy and Sell Stock
+def max_profit(prices):
+  cheapest = prices[0]
+  best_profit = 0
+
+  for price in prices:
+    if price < cheapest:
+      cheapest = price
+    else:
+      profit = price - cheapest
+      
+    if profit > best_profit:
+      best_profit = profit
+
+  return best_profit
+
+Answer = max_profit([7,1,5,3,6,4])
+print(Answer)
