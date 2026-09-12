@@ -291,3 +291,27 @@ def max_profit(prices):
 
 Answer = max_profit([7,1,5,3,6,4])
 print(Answer)
+
+
+18. Binary Search for target:
+def binary_search(nums, target):
+  left = 0
+  right = len(nums) - 1
+
+  while left <= right:
+    middle = (left + right) // 2
+
+    if nums[middle] == target:
+      return middle
+
+    else:
+      if nums[middle] < target:
+        left = middle + 1
+      elif nums[middle] > target:
+        right = middle - 1
+
+
+  return -1
+
+Answer = binary_search([2,4,6,8,10,12,14], 12)
+print(Answer)
