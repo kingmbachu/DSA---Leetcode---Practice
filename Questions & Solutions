@@ -315,3 +315,17 @@ def binary_search(nums, target):
 
 Answer = binary_search([2,4,6,8,10,12,14], 12)
 print(Answer)
+
+
+19. Reversed Linked List
+def reverse_list(head):
+  current = head
+  previous = None
+
+  while current:
+    next_node = current.next      # Save the next node
+    current.next = previous      # Reverse the arrow
+    previous = current          # Move previous ahead
+    current = next_node        # Move current ahead(iterating process)
+
+  return previous
