@@ -329,3 +329,21 @@ def reverse_list(head):
     current = next_node        # Move current ahead(iterating process)
 
   return previous
+
+20. Two_Sum question with sorted array
+def two_sum(nums, target):
+  left = 0 
+  right = len(nums) -1
+
+  while left < right:
+    current_sum = nums[left] + nums[right]
+    if current_sum > target:
+      right = right - 1
+    elif current_sum < target:
+      left = left + 1
+    else:
+        return [left + 1,right + 1]
+
+
+Answer = two_sum([1,2,3,4], 3)
+print(Answer)
