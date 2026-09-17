@@ -363,3 +363,50 @@ def max_depth(root):
 
 
 
+22. Min Stack
+
+    def __init__(self):
+        self.stack = []
+        self.MinStack = []
+
+    def push(self, val: int) -> None:
+        self.stack.append(val)
+        if not self.MinStack or val <= self.MinStack[-1]:
+            self.MinStack.append(val)
+
+    def pop(self) -> None:
+        removed_element = self.stack.pop()
+        if removed_element == self.MinStack[-1]:
+            self.MinStack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.MinStack[-1]
+        
+
+
+23. Merge Sort two Sorted Arrays:
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+        dummy = ListNode()
+        tail = dummy
+
+        while list1 and list2:
+            if list1.val <= list2.val:
+                tail.next = list1
+                list1 = list1.next
+                tail = tail.next
+            else:
+                tail.next = list2
+                list2 = list2.next
+                tail = tail.next
+
+        if list1:
+            tail.next = list1
+        else:
+            tail.next = list2
+
+        return dummy.next
