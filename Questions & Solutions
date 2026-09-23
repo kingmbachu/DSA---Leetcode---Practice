@@ -500,3 +500,34 @@ class Solution:
             prev = curr
             curr = nextWays
         return curr
+
+
+29. Group Anagrams
+We start off by creating a hashmap called group. We then want to iterate through our array,
+*strs* by creating a for loop.we thencreate a variable called key that will stored the sorted word
+in lexographical order. eg: ["a", "e", "t" ]. Our tuple is created because if we just store it as 
+sorted it wont work as it is not mutable in other words, it will return a new list. 
+We then check if the key is in group, if it is not, we create a an empty list. after that
+we append the word to the list and then return the list of values from our key.
+Time complexity: O(n * m log m)
+Space complexity: O(nm) because we store the grouped words and their sorted-letter keys.
+
+group = {}
+for word in strs:
+     key = tuple(sorted(word))
+     if key not in group:
+          group[key] = []
+     group[key].append(word)
+return list(group.values())
+
+
+30.
+
+
+
+
+
+
+
+
+
