@@ -561,11 +561,21 @@ for bucket in reversed(buckets):
           return answer
      
 
+31. Products of Array Except Self
+ I will use the Brute force method first in which i will loop through nums with i 
+and then a second loop j and will check if i !=j then preoceed to multiply the rest of j
+and retgurn answer
 
 
+ans = []
 
-
-
+for i in range(len(nums)):
+     product = 1
+     for j in range(len(nums)):
+          if i != j:
+               product *= nums[j]
+     ans.append(product)
+return ans
 
 
 
