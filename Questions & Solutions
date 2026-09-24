@@ -521,7 +521,58 @@ for word in strs:
 return list(group.values())
 
 
-30.
+30. Top K Frequent Elements
+We start by creating a hash map that we can call seen 
+and store our numbers and their frequencies by looping through
+nums array and we add number to array and make it count 1, if
+it is in the array then we just increment its count/frequency.
+now we want to create our bucket which will store the frequeny as 
+indexes and we can store our numbers in these buckets that would hold
+our frequency. The reason why we add 1 to our code len(nums) is because we could have
+the same number for the same frequency and we would need to store it approperialy.
+now we are going to loop through our seen hash map and start adding our numbers and 
+frquencies to the buckets lists. bucket[frequency] helps us to identify the frequency
+bucket and add the number to it. Now we are going to make a list and call it answers
+which will store our K frequent elemnts. Now its time to retrieve the K frequent elements. 
+how we do this is by going to the last bucket and then we then create another loop that will
+allow us to have direct acces to the numbers in the bucket. and we are going to basically
+append our number in the bucket to answer list and then check ifg the length of the answer 
+list is the same with K. also note that the seen.items allows us to access the frequencies.
+time complexity: O(n)
+space complexity: O(n)
+
+seen = {}
+for number in nums:
+     if number not in seen:
+          seen[number] = 1
+     else:
+          seen[number] += 1
+
+buckets = [[] for _ in range(len(nums) + 1)]
+
+for number, frequency in seen.items():
+     buckets[frequency].append(number)
+answer =[]
+for bucket in reversed(buckets):
+     for number in bucket:
+          answer.append(number)
+
+     if len(answer) == k:
+          return answer
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
