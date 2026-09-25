@@ -564,7 +564,7 @@ for bucket in reversed(buckets):
 31. Products of Array Except Self
  I will use the Brute force method first in which i will loop through nums with i 
 and then a second loop j and will check if i !=j then preoceed to multiply the rest of j
-and retgurn answer
+and retgurn answer. This will be O(n2)
 
 
 ans = []
@@ -577,6 +577,7 @@ for i in range(len(nums)):
      ans.append(product)
 return ans
 
+**OPTIMAL SOLUTION**
 
 
 
