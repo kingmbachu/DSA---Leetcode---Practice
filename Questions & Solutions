@@ -579,6 +579,24 @@ return ans
 
 **OPTIMAL SOLUTION**
 
+# Create answer array
+        answer = [1] * len(nums)
+
+        # LEFT / PREFIX
+        prefix = 1
+
+        for i in range(len(nums)):
+            answer[i] = prefix
+            prefix = prefix * nums[i]
+
+        # RIGHT / POSTFIX
+        postfix = 1
+
+        for i in reversed(range(len(nums))):
+            answer[i] = answer[i] * postfix
+            postfix = postfix * nums[i]
+
+        return answer
 
 
 
