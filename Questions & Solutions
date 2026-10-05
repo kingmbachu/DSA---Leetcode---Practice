@@ -652,6 +652,27 @@ class Solution:
 
 33. Number of Islands
 EXPLAIN: 
+Get the number of rows and columns in the grid. Create an empty visited set to keep track of land cells we have already explored. Initialize number_of_islands = 0.
+Create a DFS function that takes a row r and column c.
+Inside DFS, stop if:
+- The coordinate is outside the grid.
+- The cell is water "0".
+- The coordinate has already been visited.
+If the cell is valid unvisited land, add (r, c) to visited.
+Recursively run DFS in all four directions:
+- Down → (r + 1, c)
+- Up → (r - 1, c)
+- Right → (r, c + 1)
+- Left → (r, c - 1)
+Loop through every cell in the grid using nested loops.
+If grid[r][c] == "1" and (r, c) has not been visited, we have found a new island:
+- Increment number_of_islands.
+- Run dfs(r, c) to mark the entire connected island as visited.
+Continue scanning the grid. Any land belonging to an island we already found will be skipped because it is already in visited.
+Return number_of_islands after the entire grid has been scanned.
+Time Complexity: O(rows × cols) — each cell is visited at most once.
+Space Complexity: O(rows × cols) — in the worst case, the visited set and recursive DFS call stack can contain up to all cells in the grid.
+
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
