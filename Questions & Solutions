@@ -704,6 +704,17 @@ class Solution:
 
 24. Clone Graph 
 
+In order to solve this question i had created a dictionary which would store the
+original values and its clone. i then created a dfs function which would check if
+the node is in the hashmap, if it was we would return its clone, if it wasnt we 
+would make a copy variable to store the clone there and then add it to the 
+hashmap. I then created a loop which would iterate through the neighbors
+and add called the dfs fucntion on the neighbors and then added the clones
+of these neighbors to the copy which would be the list of our clones alreayd.
+i then returned the copy and had a return statmemnnt to return none of it were empty.
+Time complexity: O(m * n)
+Space complexity: O(m * n)
+
 class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
         
