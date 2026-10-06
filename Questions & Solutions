@@ -702,7 +702,24 @@ class Solution:
         return number_of_islands
 
 
+24. Clone Graph 
 
+class Solution:
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+        
+        OrgToClone = {}
+        def dfs(node):
+            if node in OrgToClone:
+                return OrgToClone[node]
+            copy = Node(node.val)
+
+            OrgToClone[node] = copy
+
+            for nei in node.neighbors:
+                copy.neighbors.append(dfs(nei))
+        
+            return copy
+        return dfs(node) if node else None
 
 
 
