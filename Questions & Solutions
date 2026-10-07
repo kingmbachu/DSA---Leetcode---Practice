@@ -702,7 +702,7 @@ class Solution:
         return number_of_islands
 
 
-24. Clone Graph 
+34. Clone Graph 
 
 In order to solve this question i had created a dictionary which would store the
 original values and its clone. i then created a dfs function which would check if
@@ -733,6 +733,41 @@ class Solution:
         return dfs(node) if node else None
 
 
+35. Binary Tree Level Order Traversal
+In order to solve this question, i first checked if the root was empty, if its empty
+then theres clearly no list so i told it to return a list. I then created a result list
+whcih would store the binary tree level order traversal results. i then created a queue 
+and appended the root into the queue. i then checked while there was something in the queue
+i created a variable called level_size which stores the len of our queue in order
+for us to iterate through it later in the code. i created an empty level lit so we could 
+track each level and append it to our result list every time were done with a level.
+during the loop, i made a node whcih would pop the first node in the list so we could then 
+check the next level. i appeneded the node value into the levels list. I then checked if
+there was a left child or right child and perfromed the BFS on them too. i then appened the levels
+to the result list and returned the list.
+Time complexity is O(n)
+Space complexity is O(n)
+
+if root is None:
+            return []
+
+        result = []
+        queue = deque()
+        queue.append(root)
+        
+        while queue:
+            level_size = len(queue)
+            level = []
+            
+            for i in range(level_size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level)
+        return result
 
 
 
