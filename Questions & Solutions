@@ -769,5 +769,35 @@ if root is None:
             result.append(level)
         return result
 
+36. Lowest Common Ancestor in Binary Search Tree
+
+In this problem we are looking for the lowest common ancesstor. essentially, what we did here
+is we created a variable called current so the root could be stored there. we then created
+a while loop which would check the conditions while there is a root. if there was no
+root then the condition would stop. we then created thjree conditions. The first one is 
+if the the value of p and q are less than the current value. if they are less than
+the current valiue then we changed the current value to be the value of the current.left
+and same thing for the right but if it was greater. if neither of these codnitions were satisified
+we could essentially say that our lca was the current node we were on, as p and q could not be 
+split anymore.
+Time complexity: O(n)
+Space Complexity: O(n)
+
+class Solution:
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+
+        current = root
+
+        while current:
+            if p.val < current.val and q.val < current.val:
+                current = current.left
+            elif p.val > current.val and q.val > current.val:
+                current = current.right
+            else: 
+                return current 
+
+
+        
+
 
 
