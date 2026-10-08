@@ -796,8 +796,31 @@ class Solution:
             else: 
                 return current 
 
+37. BackTrack Subsets
+Initialise result = [] to store all subsets and current = [] to build each subset.
+Create a recursive dfs(i) function, where i represents the current index.
+Base case: If i == len(nums), save current.copy() into result and return.
+Include: Add nums[i] to current using append().
+Explore: Call dfs(i + 1) to explore subsets including that number.
+Backtrack: Use current.pop() to undo the previous choice.
+Exclude: Call dfs(i + 1) again to explore subsets without that number.
+Start recursion with dfs(0) and return result.
+Time complexity: O(n * 2^n)
+Space complexity: O(n * 2^n)
+        current = []
+        result = []
 
+        def dfs(i):
+            if i == len(nums):
+                result.append(current.copy())
+                return
+
+            current.append(nums[i])       
+            dfs(i + 1)
+            
+            current.pop()
+            dfs(i + 1)
         
-
-
+        dfs(0)
+        return result
 
