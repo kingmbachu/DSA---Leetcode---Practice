@@ -824,3 +824,26 @@ Space complexity: O(n * 2^n)
         dfs(0)
         return result
 
+
+38. Longest Consecutive Sequence
+"
+R: given array, nums. return the longest consecutive sequence that can be formed. numbers that come after 
+each other have to be exactly 1 greater than the previous number. 
+E: 
+""nums =  [2, 20, 4, 10, 3, 4, 5]""
+""output = 4""
+
+""A: Brute Force approach: we would check if nums[i + 1] == nums[i] + 1 so in the example above we check 
+if nums[2 + 1] == nums[2] + 1 which is false. 
+so then we go to the next element with j and perform the same thing and we have a counter variable that would update the 
+count each time we find a variable that satisifies this condtion. 
+This would be O(n^2) as we have a nested for loop and time complexity would be O(n^2).
+
+Optimal solution: We would us a hash set which would store each number so theres no repition. im a bit confused on where to go after that
+"
+
+
+
+
+
+
