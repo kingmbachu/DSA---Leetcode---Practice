@@ -841,6 +841,22 @@ This would be O(n^2) as we have a nested for loop and time complexity would be O
 
 Optimal solution: We would us a hash set which would store each number so theres no repition. im a bit confused on where to go after that
 "
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        
+        numSet = set(nums)
+        longest = 0
+
+
+        for number in nums:
+            if number - 1 not in numSet:
+                length = 1
+
+                while number + length in numSet:
+                    length += 1
+                longest = max(longest, length)
+
+        return longest
 
 
 
